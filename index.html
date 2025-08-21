@@ -62,35 +62,9 @@ a.donate-btn {
     color: black;
     font-weight: bold;
 }
-#or-text {
-    margin-top: 15px;
-    font-weight: bold;
-    color: #666;
-}
 #error {
     color: red;
     margin-top: 10px;
-}
-
-/* Twint-Spenden-Bereich */
-#twint-section {
-    display: none;
-    text-align: center;
-    padding: 40px;
-}
-#twint-section img {
-    width: 200px;
-    margin: 20px 0;
-}
-#finish-btn {
-    display: none;
-    padding: 12px 20px;
-    font-size: 16px;
-    background: #28a745;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
 }
 
 /* Content-Bereich nach Login */
@@ -150,16 +124,8 @@ a.donate-btn {
     <p id="error"></p>
 
     <div id="or-text">oder</div>
-    <a href="#" class="donate-btn">Donate</a>
-</div>
-
-<!-- Twint-Spenden-Bereich -->
-<div id="twint-section">
-    <h2>Spenden mit Twint</h2>
-    <p>Spende den Betrag von 1.50 CHF und erhalte Zugriff zu der Webseite.</p>
-    <img src="twint-qr-code.png" alt="Twint QR Code">
-    <p id="wait-text" style="color:#555; font-size:14px;">Bitte scanne den QR-Code und warte kurz.</p>
-    <button id="finish-btn">Fertig</button>
+    <!-- PayPal-Spenden-Link -->
+    <a href="https://www.paypal.com/paypalme/jxridaehler@gmail.com" class="donate-btn" target="_blank">Spenden</a>
 </div>
 
 <!-- Bilder-Content -->
@@ -227,30 +193,8 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("cookie-banner").style.display = "block";
     }
 });
-
-// Twint-Spenden-Logik
-const donateBtn = document.querySelector('.donate-btn');
-const twintSection = document.getElementById('twint-section');
-const finishBtn = document.getElementById('finish-btn');
-const waitText = document.getElementById('wait-text');
-
-donateBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    document.getElementById('login-box').style.display = 'none';
-    document.getElementById('main-title').style.display = 'none'; // Haupt-Slogan ausblenden
-    twintSection.style.display = 'block';
-
-    setTimeout(() => {
-        finishBtn.style.display = 'inline-block';
-        waitText.textContent = "Wenn du bezahlt hast, kannst du jetzt auf 'Fertig' klicken. Bitte max. 1 Minute warten.";
-    }, 30000);
-});
-
-finishBtn.addEventListener('click', function() {
-    twintSection.style.display = 'none';
-    document.getElementById('content').style.display = 'block';
-});
 </script>
 
 </body>
 </html>
+
