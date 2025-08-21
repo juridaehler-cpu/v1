@@ -58,7 +58,7 @@ button {
     color: white;
 }
 a.donate-btn {
-    background: #ffc439; /* PayPal-Gelb */
+    background: #ffc439;
     color: black;
     font-weight: bold;
 }
@@ -105,8 +105,8 @@ a.donate-btn {
 }
 .gallery img {
     width: 100%;
-    border-radius: 0; /* Keine abgerundeten Ecken */
-    box-shadow: none; /* Kein Schatten */
+    border-radius: 0;
+    box-shadow: none;
 }
 
 /* Cookie Banner */
@@ -157,7 +157,7 @@ a.donate-btn {
 <div id="twint-section">
     <h2>Spenden mit Twint</h2>
     <p>Spende den Betrag von 1.50 CHF und erhalte Zugriff zu der Webseite.</p>
-    <img src="Herunterladen.png" alt="Twint QR Code">
+    <img src="twint-qr-code.png" alt="Twint QR Code">
     <p id="wait-text" style="color:#555; font-size:14px;">Bitte scanne den QR-Code und warte kurz.</p>
     <button id="finish-btn">Fertig</button>
 </div>
@@ -209,6 +209,7 @@ function checkPassword() {
     const error = document.getElementById("error");
     if (input === "rapenigga84") {
         document.getElementById("login-box").style.display = "none";
+        document.getElementById("main-title").style.display = "none"; // Haupt-Slogan ausblenden
         document.getElementById("content").style.display = "block";
         error.textContent = "";
     } else {
@@ -236,6 +237,7 @@ const waitText = document.getElementById('wait-text');
 donateBtn.addEventListener('click', function(e) {
     e.preventDefault();
     document.getElementById('login-box').style.display = 'none';
+    document.getElementById('main-title').style.display = 'none'; // Haupt-Slogan ausblenden
     twintSection.style.display = 'block';
 
     setTimeout(() => {
@@ -252,4 +254,3 @@ finishBtn.addEventListener('click', function() {
 
 </body>
 </html>
-
